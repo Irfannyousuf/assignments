@@ -1,0 +1,148 @@
+1. What are the differences between Docker and Hypervisors?
+2. What is Docker
+3. What is Container
+4. What is Image
+5. What is a Registry
+6. What is Docker hub
+7. what is the difference between container and docker container
+8. What other container technologies are available
+9. What is a contianer runtime
+10. What are the unique features of Docker over other containerization technology?
+11. What is the benefit of using a Docker over a hypervisor?
+12. What is the use of Dockerfile?
+13. What is docker compose
+14. Is it possible to use JSON instead of YAML for Docker compose?
+15. What is a docker daemon
+16. what is docker server
+17. what is docker machine
+18. How to mount shared volume during docker build?
+19. How do I setup two docker containers, such that they can see each other?
+20. How can i run a custom script during container startup
+21. How to make container visible only to other containers within the same network
+22. What are the types of running a container ?
+23. How to kill a docker container when it reaches set of memory usage or CPU limit
+24. How can i change the ip address of the container
+25. How can i set a static ip to a container
+26. How can i configure a container so that i can send email from that
+27. How can i force restart a container if there is a change in environment variable inside that running container
+28. How can i get github repo into my container 
+29. How can I get a container (NOT an image) to restart on system startup
+30. How can i restart a container when inner process falls
+31. How to override cmd in docker?
+32. What is the use of ONBUILD instruction in Dockerfile
+33. What is the difference between COPY and ADD instructions in Dockerfile
+34. How can i set Health check for the docker container
+35. What is multi stage build in docker
+36. Do I lose my data when the Docker container exits?
+37. What is the difference between kill and stop commands in docker
+38. How do you scale your Docker containers?
+39. How many containers can run per host?
+40. Is it possible to get a variable from a remote host for a Dockerfile?
+41. is it possible to pass arguments to scripts inside a Dockerfile
+42. How can I check if I directory exists in a Docker container?
+43. What's the difference between docker restart_policy on-failure vs any
+44. What is the difference between EXPOSE and publish in context of Dockerfile
+45. What does ip address 0.0.0.0 mean in containers
+46. What is the difference between create and run commands
+46. What does docker event command does?
+47. What is a ENTRYPOINT instruction in Dockerfile
+48. What is a CMD instruction in Dockerfile
+49. What is the difference between CMD and ENTRYPOINT instructions
+50. can i have mulitple CMD instructions in Dockerfile 
+51. Can i have multiple ENTRYPOINT instructions in Dockerfile
+52. How can i set a Shell script as entrypoint in Dockerfile
+53. What is the difference between docker attach and docker exec commands
+54. what is the difference between pull and push docker commands
+55. What happens when i use exit command in a running container
+56. Can i start a dead container
+57. What is the difference between attached and detached mode of running containers
+58. What is a restart policy in docker
+59. How can i set a init process in a container
+60. what is the difference between --memory and --memory-reservation while running docker container
+61. How do you search a docker image from docker hub
+62.  Explain how to keep the containers alive, even when the Docker Daemon is down
+63. What is atomic images
+64. How to view the logs for the last 1 hour, logs for a particular date, tail the log of a container continuously?
+65. How to get the IP address and gateway details of the container? List 5 ways to get it.
+66. How to start Containers that will run as user with normal Privileges and not as Root user?
+67. What is the key issue addressed by using docker run command with option –device- write-bps
+68. What is the Command to list all the ports used by a container? How to list all the Mapped ports in a container? List at least two ways to do it
+69. Why layers are important in Docker?
+70. What are the commands that will create layers?
+71. How to list the Docker layers of a Container?
+72. Where layers can be physically located?
+73. What is aufs and how it is related to layers in Docker?
+74. What is the difference between docker ps and dockerps-a commands?
+75. How to list the non-running containers?
+76. How to list containers that are using redis image?
+77. How to list the containers that exit before last 30 minutes?
+78. How to list containers that have ports 80 and 443 published?
+79. How to list containers with their commands?
+80. How to copy Docker images between hosts? What are the different ways to do the same?
+81. Like using volumes what are the otherways to handle persistent data in containers?
+82. Explain about docker-default profile and the steps to create a new profile with different set of permissions
+83. Explain the commands below,
+    docker diff 1bgh67f789c1b
+    docker container ls -a
+    docker container ls
+    docker container ls –h
+    docker ps —last 5 —quiet
+    docker ps —latest
+    docker ps —all —format {{.ID}}
+    docker ps -s
+    docker ps -n=-1
+    docker ps -l
+    docker ps -aq
+    docker ps -aq —no-trunc
+    docker container list
+    docker ps —format ‘table {{.Names}}\t{{.Image}}’
+    docker container ls -a -q — filter=name=redis docker ps — filter publish=8080
+    docker ps —filter expose=80–443/tcp
+    docker images purge
+    docker image prune -a
+    docker container prune — filter “until=1h”
+	docker network prune
+	docker volume prune — filter “label!=cache”
+	docker system prune —volumes
+	docker images -f dangling=true
+	docker ps -a -f status=exited
+	docker rm $(docker ps -a -f status=exited -q)
+	docker rm $(docker ps -a -f status=exited -f status=created -q) docker system prune — all — force — volumes
+	docker system prune -a -f –volumes
+	docker rm $(docker ps -a | grep “24 hours ago”)
+	docker rm $(docker ps -a | grep redis | awk ‘{print $1}’)
+	docker container ls -f ‘status=exited’ -f ‘status=dead’
+	docker container rm $(docker container ls -q -f ‘exited=0’)
+	docker container ls — filter volume=remote-volume –format “table \{{.ID}}\t{{.Mounts}}”
+	docker container ls — filter volume=/appl/data — format “table \{.ID}}\t{{.Mounts}}”
+	docker container ls — format “{{.ID}}: {{.Command}}”
+
+84. Do you used EE or CE edition?Why?
+85. How to set the docker daemon to listen to a TCP socket & what is the importance of port 2376? What is the role of /var/run/docker.sock? Can an application in a Docker container can access the /var/run/docker.sock file?
+86. What are data containers or Volume only containers?What are the pros and cons of using them?
+87. When to use volumes and when to use Bind Mounts?
+88. Explain about Docker Managed volumes & Bind mount volumes? What are their pros and cons?
+89. How will you see Docker events and filter Docker events for the last 1 hour?
+90. What are the various states that a Docker container can be in at any given point in time?
+91. Is there a way to identify the status of a Docker container?
+92. What type of applications - Stateless or Stateful are more suitable for Docker Container?
+93. Explain basic Docker usage workflow
+94. What is the difference between Docker Image and Layer?
+95. How will you monitor Docker in production?
+96. What is an orphant volume and how to remove it?
+97. How does Docker run containers in non-Linux systems?
+98. How containers works at low level?
+99. 
+
+
+
+
+
+
+
+
+
+
+
+
+
